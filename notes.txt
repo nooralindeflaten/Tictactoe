@@ -1,0 +1,81 @@
+
+Use const whenever possible for flutter widgets
+better preformance
+
+Var
+declare type statically inferred
+know what type it is by the value given 
+can change later
+
+dynamic
+change during program execution with type vary
+avoid
+
+components:
+
+players 
+board
+popup winner return or rematch
+
+homepage:
+start button
+picture of 1 player with text
+/Users/nooralindeflaten/app_flutter/TicTacToe/tictactoe/pubspec.lock
+
+@override
+  Widget build(BuildContext context){
+    return new IconButton(
+      icon: Image.asset('tictactoe/assets/images/max.png'),
+      iconSize: 50,
+      onPressed: (){},
+      );
+  }
+
+
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Tic Tac Toe"),
+      ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: <Widget> [
+          Image.asset('assets/images/HD-wallpaper-f1-carbon-badge-emblem-formula-1-logo.png'),
+          Expanded(
+            flex: 3,
+            child: GridView.builder(
+              padding: const EdgeInsets.all(20.0),
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 3),
+              itemCount: 9,
+              itemBuilder: (BuildContext context, int index) {
+                return GestureDetector(
+                  onTap: () {
+                    _tapped(index);
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      border: Border.all(
+                        width: 5,
+                        color: Colors.amber,
+                      ),
+                      color:Color(0xFF4169e8)
+                    ),
+                  ),
+                );
+              }
+
+                ),
+              ),],),
+      );
+  }
+
+  void _tapped(int index) {
+    setState(() {
+      
+    });
+  }
